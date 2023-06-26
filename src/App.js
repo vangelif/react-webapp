@@ -1,13 +1,18 @@
-import './App.css';
-
-const Nav = () => <div>hellooooo</div>;
+import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Homepage from './components/Homepage';
 
 function App() {
   return (
     <div className="App">
-      hi
-      <Nav />
-      <header className="App-header">hello world</header>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="countries">
+          <Route path="australia" />
+        </Route>
+      </Routes>
     </div>
   );
 }
