@@ -13,21 +13,7 @@ export const fetchCountries = createAsyncThunk(
       }
       const data = await response.json();
       console.log(data);
-
-      // const countriesData = data.map((countries) => ({
-      //   id: uuidv4(),
-      //   name: countries.name.common,
-      //   capital: countries.capital,
-      //   flag: countries.flag,
-      //   emblem: countries.coatOfArms.png,
-      //   population: countries.population,
-      //   currency: countries.currencies,
-      //   gini: countries.gini,
-      //   timezone: countries.timezones,
-      //   continent: countries.continents,
-      // }));
-
-      // return countriesData;
+      return data;
     } catch (error) {
       throw new Error(error.message);
     }
@@ -48,11 +34,29 @@ const countriesSlice = createSlice({
       loading: true,
       error: null,
     }));
-    builder.addCase(fetchCountries.fulfilled, (state, action) => ({
-      ...state,
-      loading: false,
-      countries: action.payload,
-    }));
+    builder.addCase(fetchCountries.fulfilled, (state, { payload }) => {
+      state.error = null;
+
+      const countriesList = [];
+      console.log(payload);
+      payload.map((country) =>
+        // eslint-disable-next-line implicit-arrow-linebreak
+        countriesList.push({
+          name: country.name.common,
+          capital: country.capital,
+          flag: country.flag,
+          emblem: country.coatOfArms.png,
+          population: country.population,
+          currency: country.currencies,
+          gini: country.gini,
+          timezone: country.timezones,
+          continent: country.continents,
+        })
+      );
+
+      state.countries = countriesList;
+      console.log(state.countries);
+    });
     builder.addCase(fetchCountries.rejected, (state, action) => ({
       ...state,
       loading: false,
@@ -62,5 +66,5 @@ const countriesSlice = createSlice({
 });
 
 export const { actions } = countriesSlice;
-
+export const showCountries = (state) => state.countries.countries;
 export default countriesSlice.reducer;

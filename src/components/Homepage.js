@@ -1,53 +1,75 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { fetchCountries } from '../redux/countriesSlice';
 
 const Homepage = () => {
-  const { countries } = useSelector((state) => state.countries);
-  console.log(countries);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [selectedRegion] = useState('');
-  // const [abc] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState('');
+
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
-  // const handleRegionChange = (e) => {
-  //   e.preventDefault();
-  //   const region = e.target.value;
-  //   setSelectedRegion(region);
-  //   dispatch(fetchCountries(region));
-  //   dispatch(setCountries(countries));
-  // };
+
+  const handleRegion = (region) => {
+    setSelectedRegion(region);
+    dispatch(fetchCountries(region));
+    navigate(`/countries/${region}`);
+  };
+
   return (
     <>
       <div>
-        <select
-          value={selectedRegion}
-          onChange={(e) => {
-            const region = e.target.value;
-            // setSelectedRegion(region);
-            dispatch(fetchCountries(region));
-            // dispatch(setAbc(countries));
-          }}
-        >
-          <option value="">Select Region</option>
-          <option value="europe">Europe</option>
-          <option value="south%20america">South America</option>
-          <option value="north%20america">North America</option>
-          <option value="antarctic">Antarctic</option>
-          <option value="oceania">Oceania</option>
-          <option value="asia">Asia</option>
-          <option value="africa">Africa</option>
-        </select>
+        <img className="worldmap" src="" alt="worldmap" />
+        <section value={selectedRegion} className="grid">
+          <button
+            type="button"
+            key="europe"
+            onClick={() => handleRegion('europe')}
+          >
+            Europe
+          </button>
+          <button
+            type="button"
+            key="south america"
+            onClick={() => handleRegion('south america')}
+          >
+            South America
+          </button>
+          <button
+            type="button"
+            key="north america"
+            onClick={() => handleRegion('north america')}
+          >
+            North America
+          </button>
+          <button type="button" key="asia" onClick={() => handleRegion('asia')}>
+            Asia
+          </button>
+          <button
+            type="button"
+            key="africa"
+            onClick={() => handleRegion('africa')}
+          >
+            Africa
+          </button>
+          <button
+            type="button"
+            key="antarctic"
+            onClick={() => handleRegion('antarctic')}
+          >
+            Antarctic
+          </button>
+          <button
+            type="button"
+            key="oceania"
+            onClick={() => handleRegion('oceania')}
+          >
+            Oceania
+          </button>
+        </section>
       </div>
-      {/* <div>
-        {countries.map((country) => (
-          <div key={country.id}>
-            {country.name}
-            {country.flag}
-          </div>
-        ))}
-      </div> */}
     </>
   );
 };

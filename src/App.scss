@@ -2,24 +2,31 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Gill Sans', lato;
+  color: white;
+  font-family: lato, 'Gill Sans', 'Gill Sans MT', sans-serif;
 }
 
 .App {
   text-align: center;
-
-  .navbar {
-    padding-inline: 3%;
-    padding-block: 0.5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(236, 76, 138);
-
-    div {
-      display: flex;
-      gap: 20px;
-    }
+  button {
+    color: lightcoral;
+  }
+  .back-arrow {
+    text-decoration: none;
+  }
+  .heading {
+    text-decoration: none;
+  }
+  .worldmap {
+    padding-block: 20%;
+    padding-inline: 2%;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    padding-inline: 2%;
+    padding-block: 20%;
   }
 }
 
