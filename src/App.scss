@@ -8,19 +8,24 @@
 
 .App {
   text-align: center;
+
   button {
     color: lightcoral;
   }
+
   .back-arrow {
     text-decoration: none;
   }
+
   .heading {
     text-decoration: none;
   }
+
   .worldmap {
     padding-block: 20%;
     padding-inline: 2%;
   }
+
   .grid {
     display: grid;
     grid-template-columns: auto auto;

@@ -51,8 +51,7 @@ const countriesSlice = createSlice({
           gini: country.gini,
           timezone: country.timezones,
           continent: country.continents,
-        })
-      );
+        }));
 
       state.countries = countriesList;
       console.log(state.countries);
