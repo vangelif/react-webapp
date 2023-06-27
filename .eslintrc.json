@@ -23,7 +23,8 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "overrides": [
     {

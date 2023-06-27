@@ -1,36 +1,33 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
-const api = 'https://restcountries.com/v3.1/all';
+const BASE_API = 'https://restcountries.com/v3.1/region/';
 
 export const fetchCountries = createAsyncThunk(
   'countries/fetchCountries',
-  async () => {
+  async (region) => {
     try {
-      const response = await fetch(api);
+      const response = await fetch(`${BASE_API}${region}`);
       if (!response.ok) {
-        throw new Error('cannot fetch');
+        throw new Error('cannot fetch data');
       }
       const data = await response.json();
       console.log(data);
-      const countriesData = data.map((countries) => ({
-        id: uuidv4(),
-        name: countries.name.common,
-        capital: countries.capital,
-        flag: countries.flag,
-        emblem: countries.coatOfArms.png,
-        population: countries.population,
-        currency: countries.currencies,
-        gini: countries.gini,
-        timezone: countries.timezones,
-      }));
 
-      const slicedData = countriesData.slice(0, 50);
+      // const countriesData = data.map((countries) => ({
+      //   id: uuidv4(),
+      //   name: countries.name.common,
+      //   capital: countries.capital,
+      //   flag: countries.flag,
+      //   emblem: countries.coatOfArms.png,
+      //   population: countries.population,
+      //   currency: countries.currencies,
+      //   gini: countries.gini,
+      //   timezone: countries.timezones,
+      //   continent: countries.continents,
+      // }));
 
-      console.log(slicedData);
-      return slicedData;
-      //   return countriesData;
+      // return countriesData;
     } catch (error) {
       throw new Error(error.message);
     }

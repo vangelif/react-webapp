@@ -21,6 +21,7 @@ const CountryItems = () => {
             <tbody>
               <tr>
                 <td key="123">
+                  {country.continent}
                   {country.flag}
                   {country.name}
                 </td>

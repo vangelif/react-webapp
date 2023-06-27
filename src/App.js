@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route index path="/" element={<Homepage />} />
         <Route path="countries">
           <Route path=":countryName" element={<CountryItems />} />
         </Route>
