@@ -3,14 +3,16 @@
   margin: 0;
   box-sizing: border-box;
   color: white;
-  font-family: lato, 'Gill Sans', 'Gill Sans MT', sans-serif;
+  font-family: 'lato', 'Gill Sans', 'Gill Sans MT', sans-serif;
 }
 
 .App {
   text-align: center;
 
-  button {
-    color: lightcoral;
+  .map-icon {
+    background-color: rgb(236, 76, 138);
+    opacity: 18%;
+    border-radius: 3%;
   }
 
   .back-arrow {
@@ -19,19 +21,6 @@
 
   .heading {
     text-decoration: none;
-  }
-
-  .worldmap {
-    padding-block: 20%;
-    padding-inline: 2%;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
-    padding-inline: 2%;
-    padding-block: 20%;
   }
 }
 
