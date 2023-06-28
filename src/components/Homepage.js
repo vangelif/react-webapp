@@ -9,7 +9,10 @@ import {
   Typography,
   ImageListItem,
   ImageListItemBar,
+  Box,
 } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
 import WorldMap from '../assets/worldmap.jpeg';
 import Europe from '../assets/europe.jpeg';
 import SouthAmerica from '../assets/southamerica.jpeg';
@@ -42,15 +45,17 @@ const Homepage = () => {
     <>
       <ImageListItem>
         <img
-          className="map-icon"
+          className="world-icon"
           src={WorldMap}
           alt="World Map"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
-        <ImageListItemBar
-          sx={{ borderRadius: '7%' }}
-          title="World Map Statistics"
-        />
+        <ImageListItemBar title="World Map Statistics" />
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', py: '0.5%' }}>
+          <IconButton sx={{ color: 'rgba(255, 255, 255, 0.54)' }}>
+            <InfoIcon />
+          </IconButton>
+        </Box>
       </ImageListItem>
 
       <Grid container>
