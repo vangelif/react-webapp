@@ -22,7 +22,6 @@ function App() {
         <Routes>
           <Route index path="/" element={<Homepage />} />
           <Route path="countries/:countryId" element={<Countries />} />
-          {/* <Route path=":countryId/:stats" element={<Stats />} /> */}
         </Routes>
       </Container>
     </div>

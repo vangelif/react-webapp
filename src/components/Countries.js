@@ -14,7 +14,7 @@ const Countries = () => {
   return (
     <div className="grid">
       {countries.map((country) => (
-        <div className="grid" key={country.id}>
+        <div key={country.id}>
           <span>{country.flag}</span>
           <span>{country.name}</span>
           <img height={80} width={60} src={country.emblem} alt="" />
