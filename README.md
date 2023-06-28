@@ -107,7 +107,7 @@ You can deploy this project using:
 
 👤 **Vangelis Fotiadis**
 
-- GitHub: [@sawmon](https://github.com/vangelif)
+- GitHub: [@vangelif](https://github.com/vangelif)
 - LinkedIn: [@LinkedIn](https://www.linkedin.com/in/vangfot/)
 - Twitter: [@Twitterhandle](https://twitter.com/vangfot)
 
