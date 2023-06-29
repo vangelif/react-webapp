@@ -130,7 +130,7 @@ If you like this project, please giving a star on GitHub!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the opportunity and the designer for the inspiration.
+I would like to thank the designer Nelson Sakwa on Behance for the inspiration.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
