@@ -101,13 +101,13 @@ You can deploy this project using:
 ### Video <a name="video"></a>
 
 - Live Video:
-  <!-- [video](https://www.loom.com/share/...) -->
+  [video](https://www.loom.com/share/1105a01755144438b24fdd2c062c2425?sid=1a640403-02a7-4f6b-b365-e18aebf4c672)
 
 ## 👥 Author <a name="authors"></a>
 
 👤 **Vangelis Fotiadis**
 
-- GitHub: [@sawmon](https://github.com/vangelif)
+- GitHub: [@vangelif](https://github.com/vangelif)
 - LinkedIn: [@LinkedIn](https://www.linkedin.com/in/vangfot/)
 - Twitter: [@Twitterhandle](https://twitter.com/vangfot)
 

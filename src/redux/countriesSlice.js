@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { v4 as uuidv4 } from 'uuid';
 
 const BASE_API = 'https://restcountries.com/v3.1/region/';
 
@@ -51,7 +50,8 @@ const countriesSlice = createSlice({
           gini: country.gini,
           timezone: country.timezones,
           continent: country.continents,
-        }));
+        })
+      );
 
       state.countries = countriesList;
       console.log(state.countries);
