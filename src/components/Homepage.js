@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// eslint-disable-next-line object-curly-newline
+
 import {
   Grid,
   Card,
@@ -21,14 +21,12 @@ import Asia from '../assets/asia.jpeg';
 import Africa from '../assets/africa.jpeg';
 import Antarctic from '../assets/antarctic.jpeg';
 import Oceania from '../assets/oceania.PNG';
-// eslint-disable-next-line object-curly-newline
 import { fetchCountries } from '../redux/countriesSlice';
 
 const Homepage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // eslint-disable-next-line no-unused-vars
-  const [selectedRegion, setSelectedRegion] = useState('');
+  const [setSelectedRegion] = useState('');
 
   useEffect(() => {
     dispatch(fetchCountries());

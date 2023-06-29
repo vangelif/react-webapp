@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {

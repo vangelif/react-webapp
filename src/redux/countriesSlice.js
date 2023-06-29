@@ -38,7 +38,6 @@ const countriesSlice = createSlice({
       const countriesList = [];
 
       payload.map((country) =>
-        // eslint-disable-next-line implicit-arrow-linebreak
         countriesList.push({
           name: country.name.common,
           capital: country.capital,
@@ -49,7 +48,8 @@ const countriesSlice = createSlice({
           gini: country.gini,
           timezone: country.timezones,
           continent: country.continents,
-        }));
+        })
+      );
 
       state.countries = countriesList;
     });
