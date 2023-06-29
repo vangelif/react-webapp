@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { Container } from '@mui/material';
 import Navigation from './components/Navigation';
 import Homepage from './components/Homepage';
-// import Stats from './components/Stats';
 import { fetchCountries } from './redux/countriesSlice';
 import Countries from './components/Countries';
 

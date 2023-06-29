@@ -35,7 +35,7 @@
 ### Tech Stack
 
 <a name="built-with">JSX,</a>
-<a name="tech-stack">CSS,</a>
+<a name="tech-stack">SCSS,</a>
 <a name="built-with">MUI,</a>
 <a name="tech-stack">React,</a>
 <a name="tech-stack">Redux</a>
@@ -95,13 +95,11 @@ You can deploy this project using:
 
 ### Live <a name="live"></a>
 
-- Live Demo:
-  <!-- [Countries Stats](https://...onrender.com/) -->
+- [Live Demo: Countries Stats](https://649da459a7d1a300838dc9a9--precious-crumble-870230.netlify.app/)
 
 ### Video <a name="video"></a>
 
-- Live Video:
-  [video](https://www.loom.com/share/1105a01755144438b24fdd2c062c2425?sid=1a640403-02a7-4f6b-b365-e18aebf4c672)
+- [Live Video](https://www.loom.com/share/1105a01755144438b24fdd2c062c2425?sid=1a640403-02a7-4f6b-b365-e18aebf4c672)
 
 ## 👥 Author <a name="authors"></a>
 
