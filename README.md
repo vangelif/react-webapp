@@ -96,7 +96,7 @@ You can deploy this project using:
 ### Live <a name="live"></a>
 
 - Live Demo:
-  <!-- [Countries Stats](https://...onrender.com/) -->
+[Countries Stats]([https://...onrender.com/](https://649da459a7d1a300838dc9a9--precious-crumble-870230.netlify.app/)) 
 
 ### Video <a name="video"></a>
 
