@@ -21,7 +21,6 @@ import Asia from '../assets/asia.jpeg';
 import Africa from '../assets/africa.jpeg';
 import Antarctic from '../assets/antarctic.jpeg';
 import Oceania from '../assets/oceania.PNG';
-
 // eslint-disable-next-line object-curly-newline
 import { fetchCountries } from '../redux/countriesSlice';
 
