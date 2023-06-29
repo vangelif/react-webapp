@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-// import { v4 as uuidv4 } from 'uuid';
 
 const BASE_API = 'https://restcountries.com/v3.1/region/';
 
@@ -12,7 +11,6 @@ export const fetchCountries = createAsyncThunk(
         throw new Error('cannot fetch data');
       }
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       throw new Error(error.message);
@@ -38,7 +36,7 @@ const countriesSlice = createSlice({
       state.error = null;
 
       const countriesList = [];
-      console.log(payload);
+
       payload.map((country) =>
         // eslint-disable-next-line implicit-arrow-linebreak
         countriesList.push({
@@ -54,7 +52,6 @@ const countriesSlice = createSlice({
         }));
 
       state.countries = countriesList;
-      console.log(state.countries);
     });
     builder.addCase(fetchCountries.rejected, (state, action) => ({
       ...state,
