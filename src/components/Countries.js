@@ -14,7 +14,6 @@ import {
   Typography,
   IconButton,
 } from '@mui/material';
-
 import UnfoldMoreSharpIcon from '@mui/icons-material/UnfoldMoreSharp';
 import { fetchCountries } from '../redux/countriesSlice';
 
