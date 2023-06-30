@@ -25,7 +25,10 @@
     "no-shadow": "off",
     "comma-dangle": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "no-unused-vars": "off"
   },
   "overrides": [
     {
