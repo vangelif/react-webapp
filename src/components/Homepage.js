@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// eslint-disable-next-line object-curly-newline
 import {
   Grid,
   Card,
@@ -10,7 +9,12 @@ import {
   ImageListItem,
   ImageListItemBar,
   Box,
+  Paper,
+  styled,
 } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import WorldMap from '../assets/worldmap.jpeg';
@@ -21,27 +25,68 @@ import Asia from '../assets/asia.jpeg';
 import Africa from '../assets/africa.jpeg';
 import Antarctic from '../assets/antarctic.jpeg';
 import Oceania from '../assets/oceania.PNG';
-// eslint-disable-next-line object-curly-newline
 import { fetchCountries } from '../redux/countriesSlice';
+
+const regions = [
+  { title: 'Oceania', value: 'oceania', src: Oceania },
+  { title: 'South America', value: 'south america', src: SouthAmerica },
+  { title: 'North America', value: 'north america', src: NorthAmerica },
+  { title: 'Africa', value: 'africa', src: Africa },
+  { title: 'Asia', value: 'asia', src: Asia },
+  { title: 'Antarctic', value: 'antarctic', src: Antarctic },
+  { title: 'Europe', value: 'europe', src: Europe },
+];
 
 const Homepage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // eslint-disable-next-line no-unused-vars
   const [selectedRegion, setSelectedRegion] = useState('');
 
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
 
-  const handleRegion = (region) => {
-    setSelectedRegion(region);
-    dispatch(fetchCountries(region));
-    navigate(`/countries/${region}`);
+  const handleRegionChange = (value) => {
+    setSelectedRegion(value);
+    dispatch(fetchCountries(value));
+    navigate(`/countries/${value}`);
   };
+
+  const filteredRegions = regions.filter((region) =>
+    region.title.includes(selectedRegion)
+  );
+
+  const PinkPaper = styled(Paper)(({ theme }) => ({
+    backgroundColor: 'rgb(236, 76, 138)',
+  }));
 
   return (
     <>
+      <Stack spacing={2} sx={{ width: 320 }}>
+        <Autocomplete
+          options={regions.map((option) => option.title)}
+          onChange={(event, value) => {
+            const selectedOption = regions.find(
+              (option) => option.title === value
+            );
+            if (selectedOption) {
+              handleRegionChange(selectedOption.value);
+            }
+          }}
+          renderInput={(params) => (
+            <TextField
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...params}
+              label="Continent"
+              InputLabelProps={{
+                style: { color: 'white' },
+              }}
+            />
+          )}
+          value={selectedRegion}
+          PaperComponent={PinkPaper}
+        />
+      </Stack>
       <ImageListItem>
         <img
           className="world-icon"
@@ -58,253 +103,46 @@ const Homepage = () => {
       </ImageListItem>
 
       <Grid container>
-        <Grid item xs={6}>
-          <Card
-            onClick={() => handleRegion('oceania')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={Oceania}
-                alt="Oceania"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                Oceania
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Card
-            onClick={() => handleRegion('south america')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={SouthAmerica}
-                alt="SouthAmerica"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                South America
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Card
-            onClick={() => handleRegion('north america')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={NorthAmerica}
-                alt="NorthAmerica"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                North America
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Card
-            onClick={() => handleRegion('africa')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={Africa}
-                alt="Africa"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                Africa
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Card
-            onClick={() => handleRegion('asia')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={Asia}
-                alt="Asia"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                Asia
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Card
-            onClick={() => handleRegion('antarctic')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={Antarctic}
-                alt="Antarctic"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                Antarctic
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          <Card
-            onClick={() => handleRegion('europe')}
-            sx={{
-              cursor: 'pointer',
-              bgcolor: 'rgb(236, 76, 138)',
-              boxShadow: 12,
-              borderRadius: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          >
-            <CardContent>
-              <img
-                className="map-icon"
-                src={Europe}
-                alt="Europe"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                color="primaryText"
-                sx={{ fontSize: '14px' }}
-              >
-                Europe
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        {filteredRegions.map((region) => (
+          <Grid item xs={6} md={4} key={region.value}>
+            <Card
+              onClick={() => handleRegionChange(region.value)}
+              sx={{
+                cursor: 'pointer',
+                bgcolor: 'rgb(236, 76, 138)',
+                boxShadow: 12,
+                borderRadius: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            >
+              <CardContent>
+                <img
+                  className="map-icon"
+                  src={region.src}
+                  alt={region.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+                <Typography
+                  variant="h6"
+                  component="div"
+                  color="primaryText"
+                  sx={{ fontSize: '14px' }}
+                >
+                  {region.title}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
       </Grid>
     </>
   );
 };
+
 export default Homepage;

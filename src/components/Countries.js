@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {
@@ -15,7 +14,6 @@ import {
   Typography,
   IconButton,
 } from '@mui/material';
-
 import UnfoldMoreSharpIcon from '@mui/icons-material/UnfoldMoreSharp';
 import { fetchCountries } from '../redux/countriesSlice';
 

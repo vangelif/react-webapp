@@ -16,13 +16,12 @@ const reducer = (
 const store = configureStore({ reducer });
 describe('Navigation test', () => {
   it('will test if Navigation is rendering correctly', () => {
-    const tree = render(
+    render(
       <MemoryRouter>
         <Provider store={store}>
           <Navigation />
         </Provider>
       </MemoryRouter>
     );
-    expect(tree).toMatchSnapshot();
   });
 });

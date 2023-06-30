@@ -37,19 +37,17 @@ const countriesSlice = createSlice({
 
       const countriesList = [];
 
-      payload.map((country) =>
-        // eslint-disable-next-line implicit-arrow-linebreak
-        countriesList.push({
-          name: country.name.common,
-          capital: country.capital,
-          flag: country.flag,
-          emblem: country.coatOfArms.png,
-          population: country.population,
-          currency: country.currencies,
-          gini: country.gini,
-          timezone: country.timezones,
-          continent: country.continents,
-        }));
+      payload.map((country) => countriesList.push({
+        name: country.name.common,
+        capital: country.capital,
+        flag: country.flag,
+        emblem: country.coatOfArms.png,
+        population: country.population,
+        currency: country.currencies,
+        gini: country.gini,
+        timezone: country.timezones,
+        continent: country.continents,
+      }));
 
       state.countries = countriesList;
     });
