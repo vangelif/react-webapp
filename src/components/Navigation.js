@@ -17,14 +17,14 @@ const Navigation = () => (
   >
     <NavLink to="/" className="back-arrow">
       {' '}
-      <IoChevronBack size={25} className="back-arrow" />
+      <IoChevronBack size={30} className="back-arrow" />
     </NavLink>
     <NavLink to="/" className="heading">
       <h2>countries stats</h2>
     </NavLink>
     <Box sx={{ gap: '20px', display: 'flex' }}>
-      <PiMicrophoneFill size={15} />
-      <FaGear size={15} />
+      <PiMicrophoneFill size={20} />
+      <FaGear size={20} />
     </Box>
   </Box>
 );

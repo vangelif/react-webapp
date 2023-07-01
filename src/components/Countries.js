@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import UnfoldMoreSharpIcon from '@mui/icons-material/UnfoldMoreSharp';
 import { fetchCountries } from '../redux/countriesSlice';
+import Dummy from '../assets/dummy.png';
 
 const Countries = () => {
   const countries = useSelector((state) => state.countries.countries);
@@ -52,12 +53,23 @@ const Countries = () => {
                       '& .MuiAccordionSummary-content': { margin: '10px 10px' },
                     }}
                   >
-                    <img
-                      height={60}
-                      width={40}
-                      src={country.emblem}
-                      alt="N / A"
-                    />
+                    {country.emblem ? (
+
+                      <img
+                        height={60}
+                        width={40}
+                        src={country.emblem}
+                        alt="Country Emblem"
+                      />
+                    ) : (
+                      <img
+                        height={60}
+                        width={40}
+                        style={{ borderRadius: '50%' }}
+                        src={Dummy}
+                        alt="Dummy Emblem"
+                      />
+                    )}
 
                     <IconButton>
                       <UnfoldMoreSharpIcon />

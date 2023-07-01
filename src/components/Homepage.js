@@ -17,7 +17,7 @@ import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
-import WorldMap from '../assets/worldmap.jpeg';
+import WorldMap from '../assets/stats.png';
 import Europe from '../assets/europe.jpeg';
 import SouthAmerica from '../assets/southamerica.jpeg';
 import NorthAmerica from '../assets/northamerica.jpeg';
@@ -72,9 +72,9 @@ const Homepage = () => {
             width: '100%', height: '100%', objectFit: 'cover', marginTop: '10px'
           }}
         />
-        <ImageListItemBar title="World Map Statistics" />
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', py: '0.5%' }}>
-          <IconButton sx={{ color: 'rgba(255, 255, 255, 0.54)' }}>
+        <ImageListItemBar title="World Map Statistics" sx={{ backgroundColor: 'e0e0e0' }} />
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', py: '1%' }}>
+          <IconButton>
             <InfoIcon />
           </IconButton>
         </Box>
@@ -94,7 +94,7 @@ const Homepage = () => {
             <TextField
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...params}
-              label="Continent"
+              label="Continent.."
               InputLabelProps={{
                 style: { color: 'white' },
               }}
@@ -126,8 +126,8 @@ const Homepage = () => {
                   src={region.src}
                   alt={region.title}
                   style={{
-                    width: '100%',
-                    height: '100%',
+                    width: '150px',
+                    height: '170px',
                     objectFit: 'cover',
                   }}
                 />
@@ -138,9 +138,13 @@ const Homepage = () => {
                   sx={{ fontSize: '14px' }}
                 >
                   {region.title}
+
                 </Typography>
+
               </CardContent>
+
             </Card>
+
           </Grid>
         ))}
       </Grid>
