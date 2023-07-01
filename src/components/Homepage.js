@@ -62,7 +62,24 @@ const Homepage = () => {
 
   return (
     <>
-      <Stack spacing={2} sx={{ width: 320 }}>
+
+      <ImageListItem>
+        <img
+          className="world-icon"
+          src={WorldMap}
+          alt="World Map"
+          style={{
+            width: '100%', height: '100%', objectFit: 'cover', marginTop: '10px'
+          }}
+        />
+        <ImageListItemBar title="World Map Statistics" />
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', py: '0.5%' }}>
+          <IconButton sx={{ color: 'rgba(255, 255, 255, 0.54)' }}>
+            <InfoIcon />
+          </IconButton>
+        </Box>
+      </ImageListItem>
+      <Stack spacing={2} sx={{ width: '100%', marginTop: '10px', marginBottom: '10px' }}>
         <Autocomplete
           options={regions.map((option) => option.title)}
           onChange={(event, value) => {
@@ -87,20 +104,6 @@ const Homepage = () => {
           PaperComponent={PinkPaper}
         />
       </Stack>
-      <ImageListItem>
-        <img
-          className="world-icon"
-          src={WorldMap}
-          alt="World Map"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-        <ImageListItemBar title="World Map Statistics" />
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', py: '0.5%' }}>
-          <IconButton sx={{ color: 'rgba(255, 255, 255, 0.54)' }}>
-            <InfoIcon />
-          </IconButton>
-        </Box>
-      </ImageListItem>
 
       <Grid container>
         {filteredRegions.map((region) => (

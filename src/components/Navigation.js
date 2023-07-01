@@ -12,6 +12,7 @@ const Navigation = () => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
+      paddingTop: '7px',
     }}
   >
     <NavLink to="/" className="back-arrow">
