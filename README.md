@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
-![gif of the webapp](https://media.giphy.com/media/PW6vE6D3SqAlQSIzDy/giphy.gif)
+![gif of the webapp](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGd4cGU0eHRlOGZpMTZxczZwbm5lY3I0cDFtb3UzeHpmaGcxc3B2OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P3azbKx5si6xMOfO9m/giphy.gif)
+
+
 
 # 📗 Table of Contents
 
